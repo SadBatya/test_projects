@@ -1,0 +1,269 @@
+@import url("./fonts.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  font-family: "TTHoves", sans-serif;
+}
+
+.header {
+  max-width: 1440px;
+  padding: 40px 135px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 330px;
+}
+
+.header__nav-list {
+  display: flex;
+  gap: 60px;
+}
+
+.header__nav-link {
+  padding: 4px 0;
+  list-style: none;
+  font-size: 12px;
+  letter-spacing: 20%;
+  color: #333333;
+  font-weight: 300;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.2s all;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+.header__nav-link:hover {
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+}
+
+.main {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 135px;
+}
+
+.main__title {
+  margin-top: 63px;
+  text-transform: uppercase;
+}
+
+.main__title-one {
+  font-size: 64px;
+  font-weight: 300;
+  color: #bdbdbd;
+}
+
+.main__title-two {
+  font-size: 64px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: #f2f2f2;
+  margin: 30px 0;
+}
+
+.photo__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.photo__block {
+  max-width: 210px;
+  background-color: #fbfbfb;
+}
+
+.photo__text {
+  font-weight: 300;
+  font-size: 14px;
+  color: #333333;
+  padding: 20px 20px 0 20px;
+}
+
+.photo__nav {
+  margin-top: 60px;
+  display: flex;
+  gap: 26px;
+  align-items: center;
+}
+
+.photo__num {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.photo__num-cur {
+  color: #333333;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.photo__num-slash {
+  width: 43px;
+  height: 4px;
+  background-color: #e0e0e0;
+  transform: rotate(135deg);
+}
+
+.photo__num-last {
+  color: #bdbdbd;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.photo__btns {
+  display: flex;
+  gap: 23px;
+}
+
+.photo__btn-prev {
+  cursor: pointer;
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: 0.3s all;
+}
+
+.photo__btn-prev:hover {
+  background-color: #f9f9f9;
+}
+
+.photo__btn-prev::before {
+  position: absolute;
+  content: "";
+  background: url("./img/btn-arrow.svg");
+  width: 17px;
+  height: 8px;
+}
+
+.photo__btn-next {
+  cursor: pointer;
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border: 1px solid #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  transition: 0.3s all;
+}
+
+.photo__btn-next:hover {
+  background-color: #f9f9f9;
+}
+
+.photo__btn-next::after {
+  position: absolute;
+  content: "";
+  background: url("./img/btn-arrow.svg");
+  transform: rotate(180deg);
+  width: 17px;
+  height: 8px;
+}
+
+.footer {
+  position: relative;
+  margin-top: 120px;
+  background-color: #2c2c2c;
+  height: 417px;
+}
+
+.footer__inner {
+  max-width: 1440px;
+  padding: 58px 135px 0 135px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin-left: 100px;
+  height: 229px;
+}
+
+.footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__list-title {
+  font-size: 16px;
+  margin-bottom: 9px;
+}
+
+.footer__list-item {
+  list-style: none;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.map {
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.footer__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  font-weight: 400;
+  margin-left: 157px;
+  max-width: 314px;
+  line-height: 24px;
+}
+
+.footer__list-item:first-child {
+  margin-bottom: 20px;
+}
+
+.footer__socials {
+  margin-left: 70px;
+}
+
+.footer__social-icons {
+  margin-top: 23px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  align-items: center;
+}
+
+
+.footer__rights{
+  width: 100%;
+  font-weight: 300;
+  color: #C8C8C880;
+  opacity: 50%;
+  font-size: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  padding: 24px 0;
+  position: absolute;
+  bottom: 0;
+}
