@@ -7,7 +7,6 @@ function App() {
   const [filters, setFilters] = useState({
     stops: [] as number[],
   });
-  console.log(filters);
 
   const handleStopsFilterChange = (stops: number) => {
     setFilters((prevFilters) => {
