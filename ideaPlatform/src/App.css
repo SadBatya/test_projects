@@ -1,0 +1,151 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  content: "";
+  background: url("./assets/logo.png");
+  background-position: center;
+  background-size: cover;
+  width: 65px;
+  height: 80px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  margin-top: 100px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 40px;
+}
+
+.nav_title {
+  font-size: clamp(12px, 2vw, 20px);
+  text-align: left;
+}
+
+.nav_btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav_btn {
+  border-radius: 0px;
+  border: 1px solid rgb(0, 195, 255);
+  color: rgb(0, 195, 255);
+  background-color: white;
+  transition: 0.3s all;
+}
+
+.nav_btn:hover {
+  background-color: rgba(0, 115, 255, 0.643);
+  color: white;
+}
+
+.nav_btn:focus {
+  background-color: rgb(0, 60, 255);
+  color: white;
+}
+
+.nav_description {
+  text-align: left;
+}
+
+.nav_category_btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.nav_category_btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.custom_checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(0, 195, 255);
+}
+.checkbox {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+}
+
+.checkbox:checked + .custom_checkbox {
+  content: "";
+  background: url("./assets/check.png");
+  width: 20px;
+  height: 20px;
+  background-position: center;
+  background-size: cover;
+}
+
+.ticket {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  height: 150px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 40px;
+}
+
+.ticket_btn {
+  background-color: rgb(255, 140, 0);
+  transition: .3s all;
+  color: white;
+}
+
+.ticket_btn:hover{
+  background-color: rgb(255, 179, 0);
+
+}
+
+.ticket_info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ticket_line {
+  height: 100%;
+}
+
+.ticket_travel {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.time {
+  font-size: clamp(12px, 2vw, 40px);
+}
+
+.airport {
+  font-weight: 600;
+}
+
+.arrow {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid black;
+  margin-top: 40px;
+  opacity: 50%;
+}
