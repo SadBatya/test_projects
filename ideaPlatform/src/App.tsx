@@ -1,5 +1,6 @@
 import "./App.css";
-import turkishIcon from "./assets/Turkish_Airlines_logo_2019.png";
+import { Ticket } from "./components/Ticket";
+import { tickets } from "./data/data";
 
 function App() {
   return (
@@ -38,32 +39,33 @@ function App() {
           </div>
         </div>
         <div className="ticket_list">
-          <div className="ticket">
-            <div className="ticket_info">
-              <div>
-                <img src={turkishIcon} alt="" />
-              </div>
-              <button className="ticket_btn">
-                Купить <br /> за цена
-              </button>
-            </div>
-            <hr className="ticket_line" />
-            <div className="ticket_travel">
-              <div className="ticket_departure">
-                <div className="time">10:00</div>
-                <div className="airport">VVO, Владивосток</div>
-                <div>9 окт 2018, пт</div>
-              </div>
-              <div className="arrow">
-                <p>1 пересадка</p>
-              </div>
-              <div className="departure">
-                <div className="time">12:00</div>
-                <div className="airport">MOW, Москва</div>
-                <div>9 окт 2018, пт</div>
-              </div>
-            </div>
-          </div>
+          {tickets.map(
+            ({
+              origin,
+              origin_name,
+              destination,
+              destination_name,
+              departure_date,
+              departure_time,
+              arrival_date,
+              arrival_time,
+              stops,
+              price,
+            }) => (
+              <Ticket
+                origin={origin}
+                originName={origin_name}
+                destination={destination}
+                destinationName={destination_name}
+                departureDate={departure_date}
+                departureTime={departure_time}
+                arrivalDate={arrival_date}
+                arrivalTime={arrival_time}
+                stops={stops}
+                price={price}
+              />
+            )
+          )}
         </div>
       </div>
     </>

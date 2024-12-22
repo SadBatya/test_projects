@@ -1,4 +1,4 @@
-interface iTickets {
+interface ITickets {
   origin: string;
   origin_name: string;
   destination: string;
@@ -13,7 +13,7 @@ interface iTickets {
 }
 
 
-export const tickets: iTickets[] = [
+export const tickets: ITickets[] = [
   {
     origin: "VVO",
     origin_name: "Владивосток",
