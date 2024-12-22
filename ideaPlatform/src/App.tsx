@@ -1,58 +1,76 @@
 import "./App.css";
 import { Ticket } from "./components/Ticket";
 import { tickets } from "./data/data";
+import { useState } from "react";
 
 function App() {
+  const [filters, setFilters] = useState({
+    stops: [] as number[],
+  });
+
+  const handleStopsFilterChange = (stops: number) => {
+    setFilters((prevFilters) => {
+      const newStops = prevFilters.stops.includes(stops)
+        ? prevFilters.stops.filter((stop) => stop !== stops)
+        : [...prevFilters.stops, stops];
+      return {
+        ...prevFilters,
+        stops: newStops,
+      };
+    });
+  };
+
+  const filteredTickets = tickets.filter(
+    (ticket) =>
+      filters.stops.length === 0 || filters.stops.includes(ticket.stops)
+  );
+
   return (
     <>
       <h1 className="logo"></h1>
       <div className="container">
         <div className="nav">
-          <div className="nav_title">Валюта</div>
-          <div className="nav_btns">
-            <button className="nav_btn">RUB</button>
-            <button className="nav_btn">USD</button>
-            <button className="nav_btn">EUR</button>
-          </div>
-          <div className="nav_description">Количество пересадок</div>
+          <div className="nav_title">Количество пересадок</div>
           <div className="nav_category_btns">
-            <label className="nav_category_btn">
-              <input type="checkbox" className="checkbox" />
-              <span className="custom_checkbox" />
-              <div className="nav_category_text">Без пересадок</div>
-            </label>
-            <label className="nav_category_btn">
-              <input type="checkbox" className="checkbox" />
-              <span className="custom_checkbox" />
-              <div className="nav_category_text">1 пересадка</div>
-            </label>
-            <label className="nav_category_btn">
-              <input type="checkbox" className="checkbox" />
-              <span className="custom_checkbox" />
-              <div className="nav_category_text">2 пересадки</div>
-            </label>
-            <label className="nav_category_btn">
-              <input type="checkbox" className="checkbox" />
-              <span className="custom_checkbox" />
-              <div className="nav_category_text">3 пересадки</div>
-            </label>
+            {[0, 1, 2, 3].map((stops) => (
+              <label key={stops} className="nav_category_btn">
+                <input
+                  type="checkbox"
+                  className="checkbox"
+                  checked={filters.stops.includes(stops)}
+                  onChange={() => handleStopsFilterChange(stops)}
+                />
+                <span className="custom_checkbox" />
+                <div className="nav_category_text">
+                  {stops === 0
+                    ? "Без пересадок"
+                    : stops === 1
+                    ? "1 пересадка"
+                    : `${stops} пересадки`}
+                </div>
+              </label>
+            ))}
           </div>
         </div>
         <div className="ticket_list">
-          {tickets.map(
-            ({
-              origin,
-              origin_name,
-              destination,
-              destination_name,
-              departure_date,
-              departure_time,
-              arrival_date,
-              arrival_time,
-              stops,
-              price,
-            }) => (
+          {filteredTickets.map(
+            (
+              {
+                origin,
+                origin_name,
+                destination,
+                destination_name,
+                departure_date,
+                departure_time,
+                arrival_date,
+                arrival_time,
+                stops,
+                price,
+              },
+              index
+            ) => (
               <Ticket
+                key={index}
                 origin={origin}
                 originName={origin_name}
                 destination={destination}
