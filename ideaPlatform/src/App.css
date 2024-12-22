@@ -69,6 +69,18 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+.contact_btn{
+  border: 1px solid;
+  padding: 5px 0;
+  transition: .3s all;
+}
+
+.contact_btn:hover{
+  background-color: rgba(0, 115, 255, 0.643);
+  color: white;
+}
+
 .nav_category_btn {
   display: flex;
   align-items: center;

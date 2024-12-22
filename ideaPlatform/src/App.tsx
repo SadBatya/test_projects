@@ -7,6 +7,7 @@ function App() {
   const [filters, setFilters] = useState({
     stops: [] as number[],
   });
+  console.log(filters);
 
   const handleStopsFilterChange = (stops: number) => {
     setFilters((prevFilters) => {
@@ -51,6 +52,9 @@ function App() {
               </label>
             ))}
           </div>
+          <a className="contact_btn" href="https://t.me/sadbatya">
+            Написать мне
+          </a>
         </div>
         <div className="ticket_list">
           {filteredTickets.map(
